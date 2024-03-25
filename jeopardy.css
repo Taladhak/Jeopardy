@@ -1,0 +1,77 @@
+/* some colors you may find useful:
+  #115ff4
+  #060ce9
+  #28a200
+  #8d2ab5
+  #74119c
+*/
+
+#loading {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background-color: rgba(255,255,255,0.8);
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  color: #000;
+}
+
+/* Jeopardy board styles */
+#jeopardy {
+  width: 100%;
+  max-width: 960px; /* or whatever maximum width you prefer */
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+#jeopardy th {
+  background-color: #060ce9; /* deep blue */
+  color: #ffffff; /* white */
+  font-size: 24px;
+  padding: 10px;
+}
+
+#jeopardy td {
+  cursor: pointer; /* Indicates clickable cells */
+  background-color: #115ff4; /* brighter blue */
+  color: #ffffff;
+  font-size: 18px;
+  padding: 20px;
+  border: 1px solid #ffffff;
+  text-align: center;
+  vertical-align: middle;
+  height: 100px;
+}
+
+#jeopardy td:hover {
+  background-color: #28a200; /* green */
+}
+
+/* Revealed answers */
+#jeopardy td[data-state="answer"] {
+  background-color: #8d2ab5; /* purple */
+}
+
+/* Using classes for specific states makes it easy to toggle visibility */
+.clue-visible {
+  visibility: visible;
+}
+
+.clue-hidden {
+  visibility: hidden;
+}
+
+/* Responsive table */
+@media (max-width: 600px) {
+  #jeopardy th,
+  #jeopardy td {
+    font-size: 16px;
+    padding: 10px;
+    height: 80px;
+  }
+}
